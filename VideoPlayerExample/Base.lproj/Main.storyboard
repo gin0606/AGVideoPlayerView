@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ygq-e1-8dE">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="CQv-5o-F5i">
+            <objects>
+                <navigationController id="ygq-e1-8dE" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="N0E-Ne-oaP">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="k0b-bc-W3P" kind="relationship" relationship="rootViewController" id="Y4K-jA-oBX"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BHZ-GU-TZ4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-447" y="134"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="19y-jE-ecQ">
+            <objects>
+                <viewController id="k0b-bc-W3P" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="hAu-ox-VMX">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C3P-3e-EZ0">
+                                <rect key="frame" x="143.5" y="318" width="87" height="30"/>
+                                <state key="normal" title="Show videos"/>
+                                <connections>
+                                    <segue destination="lkh-y3-jDz" kind="show" id="sao-7W-JET"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="C3P-3e-EZ0" firstAttribute="centerX" secondItem="hAu-ox-VMX" secondAttribute="centerX" id="UGh-Qk-QuM"/>
+                            <constraint firstItem="C3P-3e-EZ0" firstAttribute="centerY" secondItem="hAu-ox-VMX" secondAttribute="centerY" id="dFE-n9-AUh"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="ylx-lr-AC3"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="FFB-YX-diJ"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1pE-eB-8Kg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="462" y="134"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="ySe-cA-1hK">
+            <objects>
+                <tableViewController id="lkh-y3-jDz" customClass="ViewController" customModule="VideoPlayerExample" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="fL5-mm-hM0">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="MediaCell" rowHeight="375" id="oyu-Wf-5fY" customClass="MediaCell" customModule="VideoPlayerExample" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="375"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="oyu-Wf-5fY" id="r9Y-ae-DcQ">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="374.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nHc-na-5Eo" customClass="AGVideoPlayerView" customModule="AGVideoPlayerView">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="374.5"/>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" secondItem="nHc-na-5Eo" secondAttribute="height" multiplier="1:1" id="Ukx-9a-7Sn"/>
+                                            </constraints>
+                                        </view>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="nHc-na-5Eo" firstAttribute="height" secondItem="r9Y-ae-DcQ" secondAttribute="height" id="6wR-4V-f1D"/>
+                                        <constraint firstItem="nHc-na-5Eo" firstAttribute="width" secondItem="r9Y-ae-DcQ" secondAttribute="width" id="QZx-MS-RqQ"/>
+                                        <constraint firstItem="nHc-na-5Eo" firstAttribute="centerY" secondItem="r9Y-ae-DcQ" secondAttribute="centerY" id="U2l-J6-Prw"/>
+                                        <constraint firstItem="nHc-na-5Eo" firstAttribute="centerX" secondItem="r9Y-ae-DcQ" secondAttribute="centerX" id="dGP-dR-xCh"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="playerView" destination="nHc-na-5Eo" id="zyL-fx-IDy"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="lkh-y3-jDz" id="CB2-oD-dWB"/>
+                            <outlet property="delegate" destination="lkh-y3-jDz" id="rzb-lX-lAZ"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="Vy6-DG-9oe">
+                        <barButtonItem key="rightBarButtonItem" title="Push" id="Z6s-3s-C1Z">
+                            <connections>
+                                <segue destination="OId-Sw-9w9" kind="show" id="Zmk-gQ-IDC"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lxp-4Y-5wT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1337" y="134"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="sC5-ea-gqh">
+            <objects>
+                <viewController id="OId-Sw-9w9" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Zvb-0E-5GY">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <viewLayoutGuide key="safeArea" id="mvP-v6-LFD"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YeQ-HG-CGp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2159" y="134"/>
+        </scene>
+    </scenes>
+</document>
