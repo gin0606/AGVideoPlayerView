@@ -14,15 +14,15 @@ extension Notification.Name {
     static let playerDidChangeFullscreenMode = Notification.Name("playerDidEnterFullscreenMode")
 }
 
-class AGVideoPlayerView: UIView {
+public class AGVideoPlayerView: UIView {
 
     // MARK: Public variables
-    var videoUrl: URL? {
+    public var videoUrl: URL? {
         didSet {
             prepareVideoPlayer()
         }
     }
-    var previewImageUrl: URL? {
+    public var previewImageUrl: URL? {
         didSet {
             previewImageView.pin_setImage(from: previewImageUrl, placeholderImage: UIImage())
             previewImageView.isHidden = false
@@ -30,7 +30,7 @@ class AGVideoPlayerView: UIView {
     }
 
     //Automatically play the video when its view is visible on the screen.
-    var shouldAutoplay: Bool = false {
+    public var shouldAutoplay: Bool = false {
         didSet {
             if shouldAutoplay {
                 runTimer()
@@ -41,7 +41,7 @@ class AGVideoPlayerView: UIView {
     }
 
     //Automatically replay video after playback is complete.
-    var shouldAutoRepeat: Bool = false {
+    public var shouldAutoRepeat: Bool = false {
         didSet {
             if oldValue == shouldAutoRepeat { return }
             if shouldAutoRepeat {
@@ -53,7 +53,7 @@ class AGVideoPlayerView: UIView {
     }
 
     //Automatically switch to full-screen mode when device orientation did change to landscape.
-    var shouldSwitchToFullscreen: Bool = false {
+    public var shouldSwitchToFullscreen: Bool = false {
         didSet {
             if oldValue == shouldSwitchToFullscreen { return }
             if shouldSwitchToFullscreen {
@@ -65,7 +65,7 @@ class AGVideoPlayerView: UIView {
     }
 
     //Use AVPlayer's controls or custom. Now custom control view has only "Play" button. Add additional controls if needed.
-    var showsCustomControls: Bool = true {
+    public var showsCustomControls: Bool = true {
         didSet {
             playerController.showsPlaybackControls = !showsCustomControls
             customControlsContentView.isHidden = !showsCustomControls
@@ -73,10 +73,10 @@ class AGVideoPlayerView: UIView {
     }
 
     //Value from 0.0 to 1.0, which sets the minimum percentage of the video player's view visibility on the screen to start playback.
-    var minimumVisibilityValueForStartAutoPlay: CGFloat = 0.9
+    public var minimumVisibilityValueForStartAutoPlay: CGFloat = 0.9
 
     //Mute the video.
-    var isMuted: Bool = false {
+    public var isMuted: Bool = false {
         didSet {
             playerController.player?.isMuted = isMuted
         }
@@ -100,17 +100,17 @@ class AGVideoPlayerView: UIView {
         displayLink?.invalidate()
     }
 
-    required override init(frame: CGRect) {
+    public required override init(frame: CGRect) {
         super.init(frame: frame)
         setUpView()
     }
 
-    required init?(coder aDecoder: NSCoder) {
+    public required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         setUpView()
     }
 
-    override func willMove(toWindow newWindow: UIWindow?) {
+    override public func willMove(toWindow newWindow: UIWindow?) {
         super.willMove(toWindow: newWindow)
         if newWindow == nil {
             pause()
@@ -279,7 +279,7 @@ extension AGVideoPlayerView {
         playerController.contentOverlayView?.removeObserver(self, forKeyPath: "bounds")
     }
 
-    override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey: Any]?, context: UnsafeMutableRawPointer?) {
+    override public func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey: Any]?, context: UnsafeMutableRawPointer?) {
         switch keyPath! {
         case "rate":
             self.previewImageView.isHidden = true
@@ -315,7 +315,7 @@ extension AGVideoPlayerView {
 
 // MARK: AVPlayerViewController extension for force fullscreen mode
 extension AVPlayerViewController {
-    func forceFullScreenMode() {
+    public func forceFullScreenMode() {
         let selectorName: String = {
             if #available(iOS 11, *) {
                 return "_transitionToFullScreenAnimated:completionHandler:"
