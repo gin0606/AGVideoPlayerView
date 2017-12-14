@@ -11,6 +11,7 @@
 		7D9333181FE278D0008CE7BD /* PINOperation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D9333151FE278D0008CE7BD /* PINOperation.framework */; };
 		7D9333191FE278D0008CE7BD /* PINRemoteImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D9333161FE278D0008CE7BD /* PINRemoteImage.framework */; };
 		7D93331A1FE278D0008CE7BD /* PINCache.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D9333171FE278D0008CE7BD /* PINCache.framework */; };
+		7D93331C1FE27A3A008CE7BD /* AGVideoPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D93331B1FE27A3A008CE7BD /* AGVideoPlayerView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +21,7 @@
 		7D9333151FE278D0008CE7BD /* PINOperation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PINOperation.framework; path = Carthage/Build/iOS/PINOperation.framework; sourceTree = "<group>"; };
 		7D9333161FE278D0008CE7BD /* PINRemoteImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PINRemoteImage.framework; path = Carthage/Build/iOS/PINRemoteImage.framework; sourceTree = "<group>"; };
 		7D9333171FE278D0008CE7BD /* PINCache.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PINCache.framework; path = Carthage/Build/iOS/PINCache.framework; sourceTree = "<group>"; };
+		7D93331B1FE27A3A008CE7BD /* AGVideoPlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AGVideoPlayerView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +60,7 @@
 			children = (
 				7D93330C1FE276BC008CE7BD /* AGVideoPlayerView.h */,
 				7D93330D1FE276BC008CE7BD /* Info.plist */,
+				7D93331B1FE27A3A008CE7BD /* AGVideoPlayerView.swift */,
 			);
 			path = AGVideoPlayerView;
 			sourceTree = "<group>";
@@ -115,6 +118,7 @@
 				TargetAttributes = {
 					7D9333081FE276BC008CE7BD = {
 						CreatedOnToolsVersion = 9.2;
+						LastSwiftMigration = 0920;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -151,6 +155,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7D93331C1FE27A3A008CE7BD /* AGVideoPlayerView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -206,7 +211,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -260,7 +265,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -273,6 +278,7 @@
 		7D9333121FE276BC008CE7BD /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
@@ -289,6 +295,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = me.gin0606.AGVideoPlayerView;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -297,6 +304,7 @@
 		7D9333131FE276BC008CE7BD /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
